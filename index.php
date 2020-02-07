@@ -173,7 +173,10 @@ position:absolute;
 			<datalist id="brands">
 
 			 <?php
-			 require 'db_config.php';
+			 			
+			//Delete this line below with : require 'db_config.php'; if you are using a local server	
+			 require 'http://www.copgbawe.org/bulk-barcode/db_config.php';	
+				
 			$conn = new mysqli($server_name, $user_name, $password , $database);
 			$result = $conn->query("SELECT * FROM brands");
 
@@ -205,7 +208,8 @@ position:absolute;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	    include 'barcode128.php';
-		include 'db_config.php';
+		//Delete this line below with : require 'db_config.php'; if you are using a local server	
+		require 'http://www.copgbawe.org/bulk-barcode/db_config.php';
 		
 		$brand = $_POST['brand'];
 		$product = $_POST['product'];
@@ -268,7 +272,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
  
 
- include 'db_config.php';
+ //Delete this line below with : require 'db_config.php'; if you are using a local server	
+ require 'http://www.copgbawe.org/bulk-barcode/db_config.php';
  $conn = new mysqli($server_name, $user_name, $password , $database);
  $result = $conn->query("SELECT * FROM barcodes ORDER BY timestamp desc");
     
@@ -378,7 +383,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
  
 
- include 'db_config.php';
+ //Delete this line below with : require 'db_config.php'; if you are using a local server	
+ require 'http://www.copgbawe.org/bulk-barcode/db_config.php';
  $conn = new mysqli($server_name, $user_name, $password , $database);
  $result = $conn->query("SELECT * FROM brands ORDER BY brand_name asc");
     
